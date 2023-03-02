@@ -1,0 +1,132 @@
+class Circularprime
+{
+    public static void main(String[] args) 
+    {
+        System.out.println(cricularprime(197));//791 179 101  110 11
+    }
+    public static boolean cricularprime(int num)
+     {
+        int t=num;
+        int c=0;
+        while(t>0)
+        {
+            c++;
+            t=t/10;
+        }
+        for(int i=1;i<=c;i++)
+        {
+            if(prime(num))
+            {
+                int r=num%10;
+                int rem=num/10;
+                num =r*(int)Math.pow(10, c-1)+rem;
+            }
+            else{
+                return false;
+            }
+        }
+        return true;
+    }
+    public static boolean prime(int n)
+
+    {
+    if(n<=1)
+    {
+        return false;
+    } 
+    else if(n==2||n==3)
+    {
+        return true;
+    } 
+    else if(n%2==0||n%3==0)
+    {
+        return false;
+    } 
+    for(int i=5;i<=Math.sqrt(n);i=i+2)
+    {
+        if(n%2==0)
+        {
+            return false;
+
+        }
+
+
+    } 
+    return true;
+    }
+}
+
+
+------------------------------------------------------
+class Circularprime
+{
+    public static void main(String[] args) 
+    {
+        cricularprime(101);//791 179 101  110 11
+    }
+    public static void cricularprime(int num)
+     {
+        int t=num;
+        int c=0;
+        int prm=0;
+        while(t>0)
+        {
+            c++;
+            t=t/10;
+        }
+        for(int i=1;i<=c;i++)
+        {
+            if(prime(num))
+            {
+                prm++;
+                int r=num%10;
+                int rem=num/10;
+                num =r*(int)Math.pow(10, c-1)+rem;
+                System.out.println(num+"---> Prime number");
+            }
+            else{
+                int r=num%10;
+                int rem=num/10;
+                num =r*(int)Math.pow(10, c-1)+rem;
+                System.out.println(num+"-->Not prime");
+            }
+        }
+        System.out.println("no of digits"+c);
+        System.out.println("Prime count "+prm);
+        if(c==prm)
+        {
+            System.out.println("Cricular prime");
+        }
+        else
+        {
+            System.out.println("not Prime");
+        }
+    }
+    public static boolean prime(int n)
+
+    {
+    if(n<=1)
+    {
+        return false;
+    } 
+    else if(n==2||n==3)
+    {
+        return true;
+    } 
+    else if(n%2==0||n%3==0)
+    {
+        return false;
+    } 
+    for(int i=5;i<=Math.sqrt(n);i=i+2)
+    {
+        if(n%2==0)
+        {
+            return false;
+
+        }
+
+
+    } 
+    return true;
+    }
+}
